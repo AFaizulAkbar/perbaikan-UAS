@@ -1,0 +1,42 @@
+#rain_0
+def jalan_lima_langkah():
+    move()
+    move()
+    move()
+    move()
+    move()
+def jalan_enam_langkah():
+    move()
+    move()
+    move()
+    move()
+    move()
+    move()
+def putar_badan():
+    turn_left()
+    turn_left()
+jalan_enam_langkah()
+build_wall()
+putar_badan()
+jalan_lima_langkah()
+putar_badan()
+
+#rain_1
+def turn_righ():
+    turn_left()
+    turn_left()
+    turn_left()
+move()
+turn_right()
+move()
+while not at_goal():
+    if right_is_clear():
+        turn_right()
+        build_wall()
+        turn_left()
+    elif front_is_clear():
+        if wall_in_front():
+            turn_left()
+        move()
+    else:
+        turn_left()
